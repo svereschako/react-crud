@@ -29,7 +29,7 @@ export default class App extends React.Component {
       <Router history={history} >
         <div className="container-fluid">
           <nav>
-            <Link to="/dashboard" activeClassName="active">Dashboard</Link>
+            <Link to="/" activeClassName="active">Dashboard</Link>
             {" | "}
             <Link to="/edit" activeClassName="active">Edit</Link>
             {" | "}
@@ -37,7 +37,7 @@ export default class App extends React.Component {
             <a href="/logout" onClick={Auth.logout.bind(this)} className="pull-right">Logout</a>
           </nav>        
           <Route path="/login" component={Login} />        
-            <Route path="/dashboard" component={Dashboard} />          
+            <Route exact path="/" component={Dashboard} />          
             <Route path="/edit" component={Example} />
             <Route path="/view" component={PostIndex} />
             <Route path="/post/:postId" component={PostView} />
@@ -50,13 +50,13 @@ export default class App extends React.Component {
       <Router history={history} >
         <div className="container-fluid">
           <nav>
-            <Link to="/dashboard" activeClassName="active">Dashboard</Link>
+            <Link to="/" activeClassName="active">Dashboard</Link>
             {" | "}
             <Link to="/add" activeClassName="active">Add</Link> 
             <a href="/logout" onClick={Auth.logout.bind(this)} className="pull-right">Logout</a>
           </nav>        
           <Route path="/login" component={Login} />        
-            <Route path="/dashboard" component={Dashboard} /> 
+            <Route exact path="/" component={Dashboard} /> 
             <Route path="/add" component={Element} /> 
         </div>      
       </Router>
@@ -67,11 +67,11 @@ export default class App extends React.Component {
     <Router history={history} >
       <div className="container-fluid">
         <nav>
-          <Link to="/dashboard" activeClassName="active">Dashboard</Link>
+          <Link to="/" activeClassName="active">Dashboard</Link>
           <Link to="/login" activeClassName="active" className="pull-right">Login</Link>
         </nav>        
         <Route path="/login" component={Login} />        
-          <Route path="/dashboard" component={Dashboard} /> 
+          <Route exact path="/" component={Dashboard} /> 
       </div>      
     </Router>
     );
