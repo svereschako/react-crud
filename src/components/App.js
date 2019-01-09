@@ -21,8 +21,7 @@ export default class App extends React.Component {
   };
   }
   
-  render() {
-  //this.setState({"authenticated": this.props.authenticated});
+  render() {  
   if (this.props.authenticated == "true"){
     if(this.props.userType == "admin"){
       return (
@@ -35,12 +34,12 @@ export default class App extends React.Component {
             {" | "}
             <Link to="/view" activeClassName="active">View</Link>            
             <a href="/logout" onClick={Auth.logout.bind(this)} className="pull-right">Logout</a>
-          </nav>        
-          <Route path="/login" component={Login} />        
-            <Route exact path="/" component={Dashboard} />          
-            <Route path="/edit" component={Example} />
-            <Route path="/view" component={PostIndex} />
-            <Route path="/post/:postId" component={PostView} />
+          </nav>
+          <Route exact path="/" component={Dashboard} />         
+          <Route path="/login" component={Login} />
+          <Route path="/edit" component={Example} />
+          <Route exact path="/view" component={PostIndex} />
+          <Route path="/view/:postId" component={PostView} />
                         
         </div>      
       </Router>
@@ -54,10 +53,10 @@ export default class App extends React.Component {
             {" | "}
             <Link to="/add" activeClassName="active">Add</Link> 
             <a href="/logout" onClick={Auth.logout.bind(this)} className="pull-right">Logout</a>
-          </nav>        
-          <Route path="/login" component={Login} />        
-            <Route exact path="/" component={Dashboard} /> 
-            <Route path="/add" component={Element} /> 
+          </nav>
+          <Route exact path="/" component={Dashboard} />         
+          <Route path="/login" component={Login} />
+          <Route path="/add" component={Element} /> 
         </div>      
       </Router>
       );
@@ -69,9 +68,9 @@ export default class App extends React.Component {
         <nav>
           <Link to="/" activeClassName="active">Dashboard</Link>
           <Link to="/login" activeClassName="active" className="pull-right">Login</Link>
-        </nav>        
-        <Route path="/login" component={Login} />        
-          <Route exact path="/" component={Dashboard} /> 
+        </nav>
+        <Route exact path="/" component={Dashboard} />         
+        <Route path="/login" component={Login} /> 
       </div>      
     </Router>
     );
