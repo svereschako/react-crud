@@ -10,7 +10,7 @@ export const PostsListRow = (props) => {
       <td>{props.post.userName}</td>
       <td>
         <div className="btn-toolbar pull-right">
-          <Link to={`/post/${props.post.id}`} className="btn btn-primary">View</Link>          
+          <Link to={`/view/${props.post.id}`} className="btn btn-primary">View</Link>          
         </div>
       </td>
     </tr>
